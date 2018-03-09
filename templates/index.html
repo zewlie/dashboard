@@ -5,15 +5,46 @@
 		<!-- include _subheader.html -->
 	<!-- END subheader -->
 	<div class="m-content">
+
+		<!-- BEGIN row  -->
+		<div class="row">
+
+			<div class="col-md-4 col-xl-{{ widgets[2].size }}">
+				{% with widget=widgets[2] %}
+					{% include "x_twitter.html" %}
+				{% endwith %}
+			</div>
+
+			<div class="col-md-3">
+				{% with widget=widgets[3] %}
+					{% include "x_empty_half.html" %}
+				{% endwith %}
+				{% with widget=widgets[4] %}
+					{% include "x_empty_half.html" %}
+				{% endwith %}
+
+			</div>
+
+			<div class="col-md-5 col-xl-{{ widgets[1].size }}">
+				{% with widget=widgets[1] %}
+					{% include "x_timeline_points.html" %}
+				{% endwith %}
+			</div>
+
+
+		</div>
+		<!-- END row --> 
+
+
 		{% for row_num in range(design.rows|length) %}
-		<!--BEGIN row {{ row_num }} -->
+		<!-- BEGIN row {{ row_num }} -->
 		<div class="row" id="row_{{ row_num }}">
 			{% for num in range(design.rows[row_num]|length) %}
 			<div class="{{ design.rows[row_num][num] }}">
 			</div>
 			{% endfor %}
 		</div>
-		<!--END row {{ row_num }} --> 
+		<!-- END row {{ row_num }} --> 
 		{% endfor %}
 	</div>
 </div>

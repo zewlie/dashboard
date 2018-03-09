@@ -1,0 +1,25 @@
+<div class="m-portlet  m-portlet--full-height ">
+  <div class="m-portlet__head" style="display: none;">
+    <div class="m-portlet__head-caption">
+      <div class="m-portlet__head-title">
+        <h3 class="m-portlet__head-text">
+          {{ widget.name }}
+        </h3>
+      </div>
+    </div>
+    <!-- BEGIN widget header right -->
+
+    <!-- END widget header right -->
+  </div>
+  <!-- BEGIN widget body -->
+  <div class="m-portlet__body">
+    <div class="m-scrollable mCustomScrollbar _mCS_5 mCS-autoHide" data-scrollbar-shown="true" data-scrollable="true" data-max-height="445" style="overflow: visible; height: 445px; max-height: 445px; position: relative;">
+      <div class="m-timeline-2 twitter-timeline">
+        <div class="m-timeline-2__items">
+          {{ widget.data[0].text|safe }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END widget body -->
+</div>

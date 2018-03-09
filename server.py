@@ -6,6 +6,8 @@ from jinja2 import StrictUndefined
 from flask import Flask, Markup, render_template, redirect, request, flash, session, jsonify, url_for, abort
 from flask_debugtoolbar import DebugToolbarExtension
 
+from temp_data import create_widget_1, create_twitter_widget, create_photo_widget
+
 app = Flask(__name__)
 
 # Required to use Flask sessions and the debug toolbar
@@ -55,6 +57,8 @@ design = {
             }
           }
 
+widgets = {}
+
 # ROUTES
 #################################################################################
 
@@ -62,10 +66,24 @@ design = {
 def index():
     """Homepage."""
 
+    widget1, widget1_items = create_widget_1()
+    widgets[1] = {"name": widget1.name, "size": str(widget1.size), "data": widget1_items}
+
+    widget2, widget2_items = create_twitter_widget()
+    widgets[2] = {"name": widget2.name, "size": str(widget2.size), "data": widget2_items}
+
+    widget3, widget3_items = create_photo_widget(3, "../static/app/media/img/photos/instagram1.jpg")
+    widget4, widget4_items = create_photo_widget(4, "../static/app/media/img/photos/instagram2.jpg")
+
+    widgets[3] = {"name": widget3.name, "size": str(widget3.size), "data": widget3_items}
+    widgets[4] = {"name": widget4.name, "size": str(widget4.size), "data": widget4_items}
+
+
     return render_template('index.html', title='masondash',
                                          me=me, 
                                          world=world,
-                                         design=design)
+                                         design=design,
+                                         widgets=widgets)
 
 
 

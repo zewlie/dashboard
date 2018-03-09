@@ -3,12 +3,12 @@
     <div class="m-portlet__head-caption">
       <div class="m-portlet__head-title">
         <h3 class="m-portlet__head-text">
-          { WIDGET TITLE }
+          {{ widget.name }}
         </h3>
       </div>
     </div>
     <!-- BEGIN widget header right -->
-    {% include "_x_header_right_dropdown.html" %}
+
     <!-- END widget header right -->
   </div>
   <!-- BEGIN widget body -->
@@ -16,17 +16,26 @@
     <div class="m-scrollable mCustomScrollbar _mCS_5 mCS-autoHide" data-scrollbar-shown="true" data-scrollable="true" data-max-height="380" style="overflow: visible; height: 380px; max-height: 380px; position: relative;">
       <div class="m-timeline-2">
         <div class="m-timeline-2__items  m--padding-top-25 m--padding-bottom-30">
-          <div class="m-timeline-2__item">
-            <span class="m-timeline-2__item-time">
-              { 0:00 }
+          {% for item in widget.data %}
+          <!-- BEGIN widget item -->
+          <div class="m-timeline-2__item {% if loop.index >= 2 %}m--margin-top-30{% endif %}">
+            <span class="m-timeline-2__item-time m--font-{{ item.color_class }}">
+              {% if item.progress == 100 %}<i class="fa fa-check"></i>{% else %}{{ item.score }}{% endif %}
             </span>
             <div class="m-timeline-2__item-cricle">
-              <i class="fa fa-genderless m--font-danger"></i>
+              <i class="fa fa-genderless m--font-{{ item.color_class }}"></i>
             </div>
             <div class="m-timeline-2__item-text  m--padding-top-5">
-              { WIDGET ITEM TEXT }
+              {{ item.text|safe }}
+              {% if item.progress > 0 and item.progress < 100 %}
+              <div class="progress m-progress--sm" style="margin-top:10px; width: 200px;">
+                <div class="progress-bar m--bg-{{ item.color_class }}" role="progressbar" style="width: {{ item.progress }}%;" aria-valuenow="{{ item.progress }}" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              {% endif %}
             </div>
           </div>
+          <!-- END widget item -->
+          {% endfor %}
         </div>
       </div>
     </div>
