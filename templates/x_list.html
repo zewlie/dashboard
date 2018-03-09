@@ -1,0 +1,44 @@
+<div class="m-portlet m-portlet--full-height m-portlet--fit ">
+  <div class="m-portlet__head">
+    <div class="m-portlet__head-caption">
+      <div class="m-portlet__head-title">
+        <h3 class="m-portlet__head-text">
+          { WIDGET TITLE }
+        </h3>
+      </div>
+    </div>
+    <!-- BEGIN widget header right -->
+    {% include "_x_header_right_dropdown.html" %}
+    <!-- END widget header right -->
+  </div>
+  <!-- BEGIN widget body -->
+  <div class="m-portlet__body">
+    <div class="m-widget4 m-widget4--chart-bottom" style="min-height: 480px">
+      <!-- BEGIN widget list item -->
+      <div class="m-widget4__item">
+        <div class="m-widget4__img m-widget4__img--logo">
+          <img src="{ WIDGET ITEM IMG SOURCE }" alt="">
+        </div>
+        <div class="m-widget4__info">
+          <span class="m-widget4__title">
+            { WIDGET ITEM TITLE }
+          </span>
+          <br>
+          <span class="m-widget4__sub">
+            { WIDGET ITEM TEXT }
+          </span>
+        </div>
+        <span class="m-widget4__ext">
+          <span class="m-widget4__number m--font-brand">
+            { WIDGET #/%/$ }
+          </span>
+        </span>
+      </div>
+      <!-- END widget list item -->
+      <div class="m-widget4__chart m-portlet-fit--sides m--margin-top-20" style="height:260px;">
+        <canvas id="m_chart_trends_stats_2"></canvas>
+      </div>
+    </div>
+  </div>
+  <!-- END widget body -->
+</div>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <!-- BEGIN head -->
+  {% include "_head.html" %}
+  <!-- END head -->
+  <!-- BEGIN body -->
+  <body class="m-page--fluid m--skin- m-content--skin-light2 m-header--fixed m-header--fixed-mobile m-aside-left--enabled m-aside-left--skin-dark m-aside-left--fixed m-aside-left--offcanvas m-footer--push m-aside--offcanvas-default"  >
+    <!-- BEGIN page -->
+    <div class="m-grid m-grid--hor m-grid--root m-page">
+      <!-- BEGIN header -->
+      {% include "_header.html" %}    
+      <!-- END header -->
+      <!-- BEGIN main -->
+      <div class="m-grid__item m-grid__item--fluid m-grid m-grid--ver-desktop m-grid--desktop m-body">
+        <!-- BEGIN sidebar -->
+        {% include "_sidebar.html" %}
+        <!-- END sidebar -->
+
+        {% block main %}
+        {% endblock %}
+
+      </div>
+      <!-- END main -->
+      <!-- BEGIN footer -->
+      {% include "_footer.html" %}
+      <!-- END footer -->
+    </div>
+    <!-- END page -->
+    <!-- BEGIN quick sidebar -->
+      <!-- include _quick_sidebar.html -->
+    <!-- END quick sidebar -->       
+    <!-- BEGIN scroll to top -->
+    <div class="m-scroll-top m-scroll-top--skin-top" data-toggle="m-scroll-top" data-scroll-offset="500" data-scroll-speed="300">
+      <i class="la la-arrow-up"></i>
+    </div>
+    <!-- END scroll to top -->        
+    <!-- BEGIN sticky nav -->
+      <!-- include _sticky_nav.html -->
+    <!-- END sticky nav --> 
+    {% include "_scripts.html" %}
+  </body>
+  <!-- END body -->
+</html>

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="m-grid__item m-grid__item--fluid m-wrapper">
+	<!-- BEGIN subheader -->
+		<!-- include _subheader.html -->
+	<!-- END subheader -->
+	<div class="m-content">
+		{% for row_num in range(design.rows|length) %}
+		<!--BEGIN row {{ row_num }} -->
+		<div class="row" id="row_{{ row_num }}">
+			{% for num in range(design.rows[row_num]|length) %}
+			<div class="{{ design.rows[row_num][num] }}">
+			</div>
+			{% endfor %}
+		</div>
+		<!--END row {{ row_num }} --> 
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}
