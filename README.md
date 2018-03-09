@@ -1,16 +1,12 @@
 ## A public dashboard
 This is my attempt to play with a homepage that integrates everything I've been up to.
 
-## Layout Setup
+### Layout Setup
 - [X] Create the header/top menu
 - [X] Make the sidebar useful
+- [ ] Add social media links
 
-## Integrations
-- [ ] Integrate Twitter
-- [ ] Integrate Pocket
-- [ ] Integrate Google Drive
-
-# Modules
+### Models
 - [ ] Twitter
 - [ ] Pocket
 - [ ] Base Table
@@ -21,3 +17,12 @@ This is my attempt to play with a homepage that integrates everything I've been 
 - [ ] Simple List
 - [ ] Announcement
 - [ ] Text Feature
+
+### Integrations
+- [ ] Integrate Twitter
+- [ ] Integrate Pocket
+- [ ] Integrate Google Drive
+
+### Later
+- [ ] Make the sidebar operable
+- [ ] Deploy
